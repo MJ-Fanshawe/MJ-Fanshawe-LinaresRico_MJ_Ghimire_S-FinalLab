@@ -18,7 +18,7 @@ color: white;
 
 background-image: url("../images/background.webp");
 background-repeat: no-repeat;
-background-size: contain;
+background-size: cover;
 }
 
 /* main header rules */
@@ -27,9 +27,12 @@ header {
   top: 0;
   display: flex;
   justify-content: end;
+  background-image: url(../images/bg_red.jpg);
+  background-size: cover;
+  background-color: #fff;
 }
 
-#main-logo { width: 220px; padding: 10px 20px; margin-left: auto; }
+#main-logo { width: 220px; padding: 10px 0 10px 10px; margin-left: auto; padding-right: 20px; }
 
 /* main rules here */
 #character-nav { margin-left: 30%; max-width: 60%; }
