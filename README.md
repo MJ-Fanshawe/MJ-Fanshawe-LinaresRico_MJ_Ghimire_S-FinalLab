@@ -1,6 +1,6 @@
 # Final: World Cup
 
-This projects shows the description of some of the countries that will qualify to the final of Qatar.
+This project shows the description of some of the countries that will qualify to the final of Qatar.
 
 
 ## Contributing
