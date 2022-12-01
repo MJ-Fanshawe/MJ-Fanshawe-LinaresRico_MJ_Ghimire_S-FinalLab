@@ -52,25 +52,91 @@ header {
   margin: 20px 8px;
 
   background-color: black;
-
-
   text-align: left;
-
   cursor: pointer;
 }
 
 
 .characters li h5 {
-  color: white;
+  position: relative;
   padding: 12px 8px;
+  color: white;
+  z-index: 500;
 }
 
 .characters li a { text-decoration: none; }
 
-.red_bumper {
+.argentina_bumper {
+  height: 6px; background-color: #6dabe4;
   width: 100%;
   height: 6px;
-  background-color: red;
+  transition: height 0.2s ease;
+  position: absolute;
+}
+
+.brazil_bumper {
+  height: 6px; background-color: #009c3b;
+  width: 100%;
+  height: 6px;
+  transition: height 0.2s ease;
+  position: absolute;
+}
+
+.portugal_bumper {
+  height: 6px; background-color: #060;
+  width: 100%;
+  height: 6px;
+  transition: height 0.2s ease;
+  position: absolute;
+}
+
+.spain_bumper {
+  height: 6px; background-color: #ae1518;
+  width: 100%;
+  height: 6px;
+  transition: height 0.2s ease;
+  position: absolute;
+}
+
+.korea_bumper {
+  height: 6px; background-color: #0047a1;
+  width: 100%;
+  height: 6px;
+  transition: height 0.2s ease;
+  position: absolute;
+}
+
+.nether_bumper {
+  height: 6px; background-color: #1f4785;
+  width: 100%;
+  height: 6px;
+  transition: height 0.2s ease;
+  position: absolute;
+}
+
+
+.characters li:hover .argentina_bumper {height: 70px; }
+.characters li:hover .brazil_bumper {height: 70px; }
+.characters li:hover .portugal_bumper {height: 70px; }
+.characters li:hover .spain_bumper {height: 70px; }
+.characters li:hover .korea_bumper {height: 70px; }
+.characters li:hover .nether_bumper {height: 70px; }
+
+.sprite:hover::after { 
+  content: '\26BD';
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  border: 4px solid rgb(255, 255, 255);
+
+
+  background-position-y: -150px;
+  top: 100%;
+  right: 18px;
+  font-size: 1.5em;
+
+  animation: fadeIn 0.7s;
 }
 
 article { 
@@ -95,33 +161,18 @@ article p {
   width: 150px;
   height: 150px;
   
-  background-image: url('../images/marvelSprites.jpg');
+  background-image: url('../images/flagsSprites.jpg');
 }
 
-#carol { background-position: -150px 0; }
-#clint { background-position: -300px 0; }
-#hulk { background-position: -450px 0; }
-#thor { background-position: -600px 0; }
-#widow { background-position: -750px 0; }
+#brazil { background-position: -150px 0; }
+#portugal { background-position: -300px 0; }
+#spain { background-position: -450px 0; }
+#south-korea { background-position: -600px 0; }
+#netherlands { background-position: -750px 0; }
 
 .sprite:hover { background-position-y: -150px !important; }
-/*
-.sprite:hover::after { 
-  content: '\2713';
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background-color: rgb(41, 169, 41);
-  border: 4px solid rgb(41, 169, 41);
-  background-position-y: -150px;
-  position: relative;
-  top: 100%;
-  right: 18px;
-  font-size: 1.5em;
 
-  animation: fadeIn 0.7s;
-}
-*/
+
 /* footer rules here */
 footer {
   color: white;
@@ -141,23 +192,31 @@ footer {
 
 .lightbox { 
   width: 100vw; /* vw = viewport width => screen width */
-  height: 95vh; /* vh = viewport height => screen height */
+  height: 100vh; /* vh = viewport height => screen height */
 
   position: absolute;
   top: 0;
   left: 0;
 
   background-color: rgba(0, 0, 0, 0.92);
-  background-image: url('../images/Cap_LB_Bg.png');
+  background-image: url('../images/argentina.png');
   background-repeat: no-repeat;
 
-  background-size: 55vh; /* 55% of the viewport height */
-  background-position: 40px bottom;
+  background-size: 80vh; /* 55% of the viewport height */
+  background-position: 40px 100px;
+  z-index: 5000;
 
   display: none;
+
 }
 
-#lightbox2 { background-image: url('../images/Thor_LB_Bg.png'); }
+
+#lightbox2 { background-image: url('../images/brazil.png'); background-size: 70vh;}
+#lightbox3 { background-image: url('../images/portugal.webp'); }
+#lightbox4 { background-image: url('../images/spain.png'); background-size: 70vh}
+#lightbox5 { background-image: url('../images/korea.png'); background-size: 60vh}
+#lightbox6 { background-image: url('../images/netherlands.png'); background-size: 60vh; }
+
 
 .lightbox_close {
   position: relative;
@@ -188,8 +247,8 @@ footer {
   line-height: 1.6 !important;
   margin-left: 0;
   padding-top: 0.8em;
-  margin
+
 }
 
 /* turn the lightbox on using the :target pseudo selector */
-.lightbox:target { display: in-block; }
+.lightbox:target{ display: block;}
